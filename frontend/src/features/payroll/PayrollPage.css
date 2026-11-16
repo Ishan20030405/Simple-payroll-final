@@ -1,0 +1,154 @@
+/* src/features/payroll/PayrollPage.css */
+
+:root {
+  --ink: #0F1F3D;
+  --steel: #2F5C8A;
+  --steel-light: #E9F0F7;
+  --ledger: #1B7A5E;
+  --ledger-light: #E7F5EF;
+  --coral: #D6553C;
+  --coral-light: #FBEAE6;
+  --paper: #F7F5EF;
+  --paper-dim: #EFEBE0;
+  --card: #FFFFFF;
+  --line: #E4E0D4;
+  --text: #211C13;
+  --text-mute: #746E5E;
+  --warning: #C99A2E;
+  --warning-light: #FCF3DC;
+  --purple: #8B5CF6;
+}
+
+.payroll-page-wrapper {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+}
+
+.payroll-page-wrapper h1, 
+.payroll-page-wrapper h2, 
+.payroll-page-wrapper h3, 
+.payroll-page-wrapper .disp { 
+  font-family: 'Space Grotesk', sans-serif; 
+}
+
+.payroll-page-wrapper .mono { 
+  font-family: 'JetBrains Mono', monospace; 
+}
+
+.payroll-page-wrapper input, 
+.payroll-page-wrapper select,
+.payroll-page-wrapper button { 
+  font-family: inherit; 
+}
+
+.payroll-page-wrapper input:focus, 
+.payroll-page-wrapper select:focus { 
+  outline: 2px solid var(--steel); 
+  outline-offset: 1px; 
+}
+
+.payroll-page-wrapper button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.payroll-page-wrapper button:hover {
+  opacity: 0.9;
+}
+
+.payroll-page-wrapper .stub {
+  position: relative;
+  background: var(--card);
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.payroll-page-wrapper .stub::before, 
+.payroll-page-wrapper .stub::after {
+  content: ""; 
+  position: absolute; 
+  top: -1px; 
+  width: 18px; 
+  height: 18px;
+  background: var(--paper); 
+  border-radius: 50%; 
+  border: 1px solid var(--line);
+}
+.payroll-page-wrapper .stub::before { left: -9px; }
+.payroll-page-wrapper .stub::after { right: -9px; }
+
+.payslip-generator-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 0 24px;
+}
+
+.payslip-generator-message {
+  margin: 12px 0 0;
+  font-size: 13px;
+}
+
+.payslip-generator-message.success { color: var(--ledger); }
+.payslip-generator-message.error { color: var(--coral); }
+
+.payslip-editor-hint,
+.payslip-editor-message {
+  align-self: center;
+  font-size: 13px;
+}
+
+.payslip-editor-hint { color: var(--text-mute); }
+.payslip-editor-message.success { color: var(--ledger); }
+.payslip-editor-message.error { color: var(--coral); }
+
+.payroll-page-wrapper .input-style {
+  width: 90%;
+  padding: 10px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.payroll-page-wrapper .form-group { 
+  margin-bottom: 18px; 
+}
+.payroll-page-wrapper .form-label { 
+  display: block; 
+  font-size: 12.5px; 
+  font-weight: 600; 
+  color: var(--text-mute); 
+  margin-bottom: 6px; 
+}
+
+.payroll-page-wrapper .btn-primary {
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  padding: 9px 16px;
+  border-radius: 9px; 
+  border: none; 
+  background: var(--ink); 
+  color: #fff;
+  font-size: 13.5px; 
+  font-weight: 600;
+}
+
+.payroll-page-wrapper .btn-secondary {
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  padding: 9px 16px;
+  border-radius: 9px; 
+  border: 1px solid var(--line); 
+  background: #fff;
+  font-size: 13.5px; 
+  color: var(--text); 
+  font-weight: 500;
+}
+
+.fade-in { animation: fadeIn 0.35s ease both; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: translateY(0);} }
+

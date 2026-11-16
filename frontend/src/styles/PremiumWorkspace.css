@@ -1,0 +1,137 @@
+/* Shared screen theme. Printed documents retain their existing layouts. */
+@media screen {
+  .premium-workspace {
+    --ink: #152744;
+    --steel: #2e4b73;
+    --steel-light: #edf2fa;
+    --paper: #f3f5f9;
+    --paper-dim: #eaf0f7;
+    --card: #ffffff;
+    --line: #e1e7ef;
+    --text: #17243b;
+    --text-mute: #728097;
+    --premium-shadow: 0 4px 22px -10px #1527441c;
+    background: var(--paper);
+    color: var(--text);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 100dvh;
+  }
+  .premium-workspace *, .premium-workspace *::before, .premium-workspace *::after { box-sizing: border-box; }
+  .premium-workspace :is(.overview-page, .settings-page-wrapper, .payroll-page-wrapper, .attendance-page, .activities-page) {
+    --overview-ink: #152744;
+    --overview-steel: #2e4b73;
+    --overview-steel-light: #edf2fa;
+    --overview-paper: #f3f5f9;
+    --overview-line: #e1e7ef;
+    --overview-muted: #728097;
+    color: var(--text);
+    font-family: inherit;
+  }
+  .premium-workspace :is(.sidebar, .employee-sidebar) {
+    width: 246px;
+    background: radial-gradient(ellipse at bottom left, #2e4b7360, transparent 70%), #152744;
+    border-right: 1px solid #ffffff0b;
+    padding: 8px;
+  }
+  .premium-workspace .sidebar-logo { min-height: 88px; padding: 22px 15px 27px; gap: 12px; border-bottom: 1px solid #ffffff12; }
+  .premium-workspace .logo-icon { border: 1px solid #ffffff20; border-radius: 12px; background: #ffffff0b; min-width: 38px; height: 38px; display: grid; place-items: center; padding: 6px; font-size: 17px; }
+  .premium-workspace .sidebar-logo img.logo-icon { width: 38px; height: 38px; }
+  .premium-workspace .workspace-brand-copy { display: block; font-size: 17px; letter-spacing: -.4px; overflow-wrap: anywhere; }
+  .premium-workspace .workspace-brand-copy small { display: block; font-size: 8px; font-weight: 500; letter-spacing: 1.8px; margin-top: 6px; color: #91a6c7; }
+  .premium-workspace .sidebar-nav { padding: 24px 7px; }
+  .premium-workspace .nav-item { padding: 12px 14px; border: 1px solid transparent; border-radius: 10px; color: #afbed4; font-size: 12px; font-weight: 500; margin-bottom: 6px; gap: 11px; transition: background .18s, color .18s; }
+  .premium-workspace .nav-item svg { flex-shrink: 0; opacity: .85; }
+  .premium-workspace .nav-item.active { color: #fff; background: linear-gradient(110deg, #36567f, #2e4b73); border-color: #91a6c728; box-shadow: 0 4px 12px #08172f25; }
+  .premium-workspace .nav-item:hover:not(.active) { background: #ffffff0b; color: #fff; }
+  .premium-workspace .sidebar-footer { padding: 16px 7px 10px; border-color: #ffffff12; }
+  .premium-workspace :is(.topbar, .employee-topbar) { min-height: 82px; padding: 0 34px; background: #ffffff; border-bottom: 1px solid var(--line); gap: 20px; }
+  .premium-workspace .global-search { width: min(360px, 100%); }
+  .premium-workspace .global-search input { background: #f5f7fb; border: 1px solid #e8edf4; height: 42px; border-radius: 11px; font-size: 12px; padding-left: 39px; }
+  .premium-workspace .topbar-actions { gap: 20px; flex-shrink: 0; }
+  .premium-workspace .user-avatar { width: 38px; height: 38px; border: 1px solid #dce5f1; background: #edf2fa; color: #2e4b73; border-radius: 12px; }
+  .premium-workspace .user-name { font-size: 12px; color: var(--ink); }
+  .premium-workspace .user-role { margin-top: 3px; font-size: 10px; letter-spacing: .7px; }
+  .premium-workspace :is(.page-content, .employee-page-content) { background: radial-gradient(ellipse at top right, #eaf0f870, transparent 60%), var(--paper); padding: 32px 34px 48px; overflow-x: hidden; }
+  .premium-workspace :is(.page-content, .employee-page-content) > * { max-width: 1480px; margin-left: auto; margin-right: auto; }
+  .premium-workspace :is(h1, h2, h3, .disp, .overview-title, .overview-panel-heading h2, .overview-stat-card > strong) { font-family: 'Segoe UI', sans-serif; }
+  .premium-workspace :is(.employees-title h1, .att-title, .activities-header h1, .account-profile h1, .overview-title) { font-size: 28px; line-height: 1.25; letter-spacing: -.9px; font-weight: 600; color: var(--ink); }
+  .premium-workspace :is(.employees-title p, .att-subtitle, .activities-header p, .overview-subtitle) { font-size: 13px; line-height: 1.7; color: var(--text-mute); }
+  .premium-workspace :is(.employees-header, .att-page-header, .activities-header, .overview-heading) { margin-bottom: 28px; gap: 18px; }
+  .premium-workspace :is(.stat-card, .att-stat-card, .overview-stat-card) { border: 1px solid var(--line); border-radius: 15px; background: #fff; box-shadow: var(--premium-shadow); padding: 22px; }
+  .premium-workspace :is(.overview-stat-top, .att-stat-label, .stat-label) { color: var(--text-mute); font-size: 11px; font-weight: 500; }
+  .premium-workspace :is(.overview-stat-card > strong, .att-stat-value, .stat-value) { letter-spacing: -1px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .premium-workspace :is(.overview-icon, .att-stat-icon, .stat-icon) { border-radius: 11px; }
+  .premium-workspace :is(.overview-panel, .table-container, .att-table-card, .activities-list, .stub, .settings-card, .profile-card, .add-employee-container, .account-summary) { background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--premium-shadow); }
+  .premium-workspace .stub::before, .premium-workspace .stub::after { display: none; }
+  .premium-workspace :is(.overview-panel-heading h2, .profile-card h3, .settings-card h3) { color: var(--ink); font-weight: 600; font-size: 15px; }
+  .premium-workspace :is(.table-controls, .att-filters) { background: #fff; padding: 20px 22px; border-color: var(--line); gap: 14px; }
+  .premium-workspace :is(.employee-table, .att-table, .overview-table, .report-data-table, .data-table) { border-collapse: collapse; width: 100%; font-size: 12px; }
+  .premium-workspace :is(.employee-table, .att-table, .overview-table, .report-data-table, .data-table) th { background: #f5f7fb; color: #728097; font-size: 10px; letter-spacing: .65px; font-weight: 600; padding: 15px 18px; border-color: var(--line); }
+  .premium-workspace :is(.employee-table, .att-table, .overview-table, .report-data-table, .data-table) td { padding: 17px 18px; border-color: #edf1f6; color: var(--text); font-variant-numeric: tabular-nums; }
+  .premium-workspace :is(.employee-table, .att-table, .overview-table, .report-data-table, .data-table) tbody tr:hover { background: #f8fafd; }
+  .premium-workspace :is(.emp-avatar, .att-avatar, .profile-avatar-large, .view-avatar-lg) { border-radius: 12px; background: #edf2fa; color: #2e4b73; }
+  .premium-workspace :is(.status-badge, .att-status-badge, .tax-bracket-badge) { border-radius: 7px; padding: 5px 9px; font-size: 10px; font-weight: 600; }
+  .premium-workspace :is(input:not([type=checkbox]):not([type=radio]):not([type=file]), select, textarea) { max-width: 100%; min-width: 0; border-radius: 9px; border-color: #dce3ed; color: var(--text); font-family: inherit; font-size: 12px; }
+  .premium-workspace :is(.input-style, .form-control, .att-date-input, .att-dept-select, .att-edit-input, .att-edit-select) { background: #fcfdff; min-height: 40px; }
+  .premium-workspace .input-style { width: 100%; }
+  .premium-workspace input::placeholder, .premium-workspace textarea::placeholder { color: #94a0b3; }
+  .premium-workspace :is(input, select, textarea):focus { outline: none; border-color: #7592b7; box-shadow: 0 0 0 3px #2e4b7312; }
+  .premium-workspace :is(button, a, [role=button], input):focus-visible { outline: 2px solid #7898c4; outline-offset: 3px; }
+  .premium-workspace :is(.form-label, .form-group label, .att-form-label) { color: #65758c; font-size: 11px; font-weight: 600; }
+  .premium-workspace button { font-family: inherit; }
+  .premium-workspace :is(.btn-primary, .add-employee-btn, .att-btn-add, .att-btn-save, .overview-primary-button, .tax-calculate-btn, .settings-btn.primary, .att-save-btn) { background: #1e293b; color: #fff; border: 1px solid #1e293b; border-radius: 9px; min-height: 40px; font-size: 12px; font-weight: 500; box-shadow: 0 4px 8px #1527440b; }
+  .premium-workspace :is(.btn-primary, .add-employee-btn, .att-btn-add, .att-btn-save, .overview-primary-button, .tax-calculate-btn, .settings-btn.primary, .att-save-btn):hover:not(:disabled) { background: #2e4b73; border-color: #2e4b73; }
+  .premium-workspace :is(.btn-secondary, .att-btn-cancel, .att-btn-import) { background: #fff; color: #2e4b73; border: 1px solid #dce3ed; border-radius: 9px; min-height: 40px; font-size: 12px; }
+  .premium-workspace button:disabled { cursor: not-allowed; opacity: .55; }
+  .premium-workspace :is(.custom-modal-overlay, .att-modal-overlay, .modal-overlay) { background: #0b193a80; backdrop-filter: blur(5px); padding: 20px; }
+  .premium-workspace :is(.custom-modal-content, .att-modal, .modal-content) { border: 1px solid #e1e7ef; border-radius: 18px; box-shadow: 0 30px 90px #08182e40; }
+  .premium-workspace :is(.custom-modal-header, .att-modal-header, .modal-header) { background: #fff; padding: 22px 26px; border-bottom: 1px solid var(--line); border-radius: 18px 18px 0 0; }
+  .premium-workspace :is(.custom-modal-title, .att-modal-title, .modal-title) { color: var(--ink); font-size: 18px; font-weight: 600; letter-spacing: -.4px; }
+  .premium-workspace :is(.custom-modal-footer, .att-modal-footer, .modal-footer) { background: #f8fafd; border-top: 1px solid var(--line); padding: 18px 26px; border-radius: 0 0 18px 18px; }
+  .premium-workspace .profile-header { border: 1px solid #dce5f1; border-radius: 16px; background: linear-gradient(110deg, #edf2fa, #fff); padding: 28px; }
+  .premium-workspace .profile-info h2 { color: var(--ink); letter-spacing: -.7px; }
+  .premium-workspace .profile-field label { font-size: 10px; letter-spacing: .3px; color: var(--text-mute); }
+  .premium-workspace .profile-field p { color: var(--text); font-size: 13px; }
+  .premium-workspace .activity-row { padding: 20px 24px; border-color: #edf1f6; }
+  .premium-workspace .activity-icon { border-radius: 11px; }
+  .premium-workspace .report-tabs button { border-radius: 12px; padding: 17px; box-shadow: var(--premium-shadow); }
+  .premium-workspace .report-tabs button.selected { background: linear-gradient(110deg, #152744, #2e4b73); }
+  .premium-workspace .overview-bar { background: linear-gradient(to top, #2e4b73, #7898c4); }
+  .premium-workspace .overview-period { border-radius: 11px; }
+  .premium-workspace .payslips-toolbar h1 { font-size: 28px; letter-spacing: -.9px; color: var(--ink); font-weight: 600; }
+  .premium-workspace .payslips-toolbar p { color: var(--text-mute); font-size: 13px; }
+  .premium-workspace :is(.action-btn-outline, .payslip-actions .btn-secondary) { border-radius: 9px; border-color: var(--line); color: var(--steel); background: #fff; min-height: 40px; }
+  .premium-workspace .payslip-header-controls { border-radius: 14px; border-color: var(--line); background: #fff; }
+  .premium-workspace .tabs-container { border-color: var(--line); gap: 8px; }
+  .premium-workspace .tab-btn { border-radius: 9px; font-size: 12px; }
+  .premium-workspace .tab-btn.active { color: var(--steel); background: var(--steel-light); }
+  .premium-workspace .view-tabs-container { background: #f5f7fb; border-color: var(--line); }
+  .premium-workspace .view-tab-btn.active { color: var(--steel); border-color: var(--steel); }
+  .premium-workspace .account-profile { max-width: 1100px; }
+  .premium-workspace .settings-page-wrapper .mono, .premium-workspace .payroll-page-wrapper .mono { font-family: Consolas, monospace; font-variant-numeric: tabular-nums; }
+  @media (max-width: 1050px) {
+    .premium-workspace :is(.sidebar, .employee-sidebar) { width: 210px; }
+    .premium-workspace :is(.page-content, .employee-page-content) { padding: 24px; }
+    .premium-workspace :is(.topbar, .employee-topbar) { padding: 0 24px; }
+  }
+  @media (max-width: 700px) {
+    .premium-workspace { flex-direction: column; }
+    .premium-workspace :is(.sidebar, .employee-sidebar) { width: 100%; overflow: visible; flex-direction: row; align-items: center; padding: 8px 12px; gap: 8px; }
+    .premium-workspace .sidebar-logo { min-height: 0; border: 0; padding: 4px; }
+    .premium-workspace .workspace-brand-copy { display: none; }
+    .premium-workspace .sidebar-nav { display: flex; overflow-x: auto; padding: 4px; gap: 4px; }
+    .premium-workspace .nav-item { flex-shrink: 0; margin: 0; padding: 10px; font-size: 11px; gap: 6px; white-space: nowrap; }
+    .premium-workspace .sidebar-footer { border: 0; padding: 4px; }
+    .premium-workspace .sidebar-footer .nav-item { font-size: 0; gap: 0; }
+    .premium-workspace :is(.main-wrapper, .employee-main-wrapper) { min-height: 0; }
+    .premium-workspace :is(.topbar, .employee-topbar) { height: auto; min-height: 68px; padding: 12px 18px; gap: 12px; }
+    .premium-workspace .global-search { width: auto; flex: 1; }
+    .premium-workspace .user-info { display: none; }
+    .premium-workspace .topbar-actions { gap: 12px; }
+    .premium-workspace :is(.page-content, .employee-page-content) { padding: 22px 16px 32px; }
+    .premium-workspace :is(.employees-title h1, .att-title, .activities-header h1, .account-profile h1, .overview-title) { font-size: 24px; }
+    .premium-workspace :is(.stat-card, .att-stat-card, .overview-stat-card) { padding: 17px; }
+    .premium-workspace :is(.custom-modal-overlay, .att-modal-overlay, .modal-overlay) { padding: 12px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .premium-workspace * { transition: none !important; animation-duration: .01ms !important; } }
+}

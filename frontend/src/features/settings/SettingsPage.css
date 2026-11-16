@@ -1,0 +1,444 @@
+/* src/features/settings/SettingsPage.css */
+
+.settings-page-wrapper {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+}
+
+.settings-page-wrapper h1, 
+.settings-page-wrapper h2, 
+.settings-page-wrapper h3, 
+.settings-page-wrapper .disp { 
+  font-family: 'Space Grotesk', sans-serif; 
+}
+
+.settings-page-wrapper .mono { 
+  font-family: 'JetBrains Mono', monospace; 
+}
+
+.settings-page-wrapper input, 
+.settings-page-wrapper select,
+.settings-page-wrapper button { 
+  font-family: inherit; 
+}
+
+.settings-page-wrapper input:focus, 
+.settings-page-wrapper select:focus { 
+  outline: 2px solid var(--steel); 
+  outline-offset: 1px; 
+}
+
+.settings-page-wrapper button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.settings-page-wrapper button:hover {
+  opacity: 0.9;
+}
+
+.settings-page-wrapper .stub {
+  position: relative;
+  background: var(--card);
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.settings-page-wrapper .stub::before, 
+.settings-page-wrapper .stub::after {
+  content: ""; 
+  position: absolute; 
+  top: -1px; 
+  width: 18px; 
+  height: 18px;
+  background: var(--paper); 
+  border-radius: 50%; 
+  border: 1px solid var(--line);
+}
+.settings-page-wrapper .stub::before { left: -9px; }
+.settings-page-wrapper .stub::after { right: -9px; }
+
+.settings-page-wrapper .input-style {
+  width: 90%; 
+  padding: 10px 12px; 
+  border-radius: 9px; 
+  border: 1px solid var(--line); 
+  background: #fff; 
+  font-size: 14px; 
+  color: var(--text);
+}
+
+.settings-page-wrapper .form-group { 
+  margin-bottom: 18px; 
+}
+.settings-page-wrapper .form-label { 
+  display: block; 
+  font-size: 12.5px; 
+  font-weight: 600; 
+  color: var(--text-mute); 
+  margin-bottom: 6px; 
+}
+
+.settings-page-wrapper .btn-primary {
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  padding: 9px 16px;
+  border-radius: 9px; 
+  border: none; 
+  background: var(--ink); 
+  color: #fff;
+  font-size: 13.5px; 
+  font-weight: 600;
+}
+
+.settings-page-wrapper .btn-secondary {
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  padding: 9px 16px;
+  border-radius: 9px; 
+  border: 1px solid var(--line); 
+  background: #fff;
+  font-size: 13.5px; 
+  color: var(--text); 
+  font-weight: 500;
+}
+
+.settings-page-wrapper .icon-btn {
+  background: transparent; 
+  border: none; 
+  padding: 6px; 
+  border-radius: 6px; 
+  color: var(--text-mute);
+}
+.settings-page-wrapper .icon-btn:hover { 
+  background: var(--paper); 
+  color: var(--ink); 
+}
+
+.settings-page-wrapper .tabs-container {
+  display: flex; 
+  gap: 24px; 
+  border-bottom: 1px solid var(--line); 
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+.settings-page-wrapper .tab-btn {
+  background: none; 
+  border: none; 
+  padding: 0 0 12px 0; 
+  font-size: 14px;
+  font-weight: 500; 
+  color: var(--text-mute); 
+  border-bottom: 2px solid transparent;
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+  white-space: nowrap;
+}
+.settings-page-wrapper .tab-btn.active {
+  color: var(--text); 
+  border-bottom-color: var(--steel); 
+  font-weight: 600;
+}
+
+.settings-page-wrapper .setting-tab-content { display: none; }
+.settings-page-wrapper .setting-tab-content.active { display: block; }
+
+.settings-page-wrapper .data-table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  font-size: 13.5px; 
+}
+.settings-page-wrapper .data-table th { 
+  padding: 12px 20px; 
+  font-weight: 600; 
+  font-size: 12px; 
+  text-align: left; 
+  background: var(--paper); 
+  border-bottom: 1px solid var(--line); 
+}
+.settings-page-wrapper .data-table td { 
+  padding: 14px 20px; 
+  border-bottom: 1px solid var(--line); 
+}
+
+.settings-page-wrapper .avatar {
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-weight: 700; 
+  flex-shrink: 0; 
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.settings-page-wrapper .status-pill {
+  padding: 4px 10px; 
+  border-radius: 20px; 
+  font-size: 12px; 
+  font-weight: 600; 
+  display: inline-block;
+}
+.settings-page-wrapper .pill-active { background: var(--ledger-light); color: var(--ledger); }
+.settings-page-wrapper .pill-inactive { background: var(--coral-light); color: var(--coral); }
+.settings-page-wrapper .pill-warning { background: var(--warning-light); color: var(--warning); }
+
+.settings-page-wrapper .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.settings-page-wrapper .scrollbar-thin::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+
+.settings-page-wrapper .fade-in { animation: settingsFadeIn 0.35s ease both; }
+@keyframes settingsFadeIn { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: translateY(0);} }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* ============================================
+   MODAL STYLES - TOP LAYER FIX
+   ============================================ */
+
+/* Modal Overlay - Top Layer */
+.settings-page-wrapper .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 31, 61, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999 !important;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.settings-page-wrapper .modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Modal Content - Top Layer */
+.settings-page-wrapper .modal-content {
+  background: var(--card);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  opacity: 0;
+  position: relative;
+  z-index: 10000 !important;
+}
+
+.settings-page-wrapper .modal-overlay.active .modal-content {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Large Modal */
+.settings-page-wrapper .modal-content.large {
+  max-width: 820px;
+}
+
+/* Modal Header */
+.settings-page-wrapper .modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  background: var(--paper);
+  border-radius: 16px 16px 0 0;
+}
+
+.settings-page-wrapper .modal-header .disp {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.settings-page-wrapper .modal-header .icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-mute);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  width: 36px;
+  height: 36px;
+}
+
+.settings-page-wrapper .modal-header .icon-btn:hover {
+  background: var(--coral-light);
+  color: var(--coral);
+}
+
+/* Modal Body */
+.settings-page-wrapper .modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  background: var(--card);
+}
+
+/* Modal Footer */
+.settings-page-wrapper .modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-radius: 0 0 16px 16px;
+  flex-shrink: 0;
+}
+
+/* Scrollbar Styling for Modal Body */
+.settings-page-wrapper .modal-body.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.settings-page-wrapper .modal-body.scrollbar-thin::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+
+.settings-page-wrapper .modal-body.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+
+.settings-page-wrapper .modal-body.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--text-mute);
+}
+
+/* ============================================
+   FORCE MODAL ABOVE EVERYTHING ELSE
+   ============================================ */
+
+/* Removed z-index from wrapper to avoid trapping the modal in a stacking context */
+
+.settings-page-wrapper .modal-overlay {
+  position: fixed !important;
+  z-index: 9999 !important;
+}
+
+.settings-page-wrapper .modal-content {
+  z-index: 10000 !important;
+}
+
+/* Fix for any parent container that might clip the modal */
+.settings-page-wrapper .modal-overlay,
+.settings-page-wrapper .modal-overlay *,
+.settings-page-wrapper .modal-content,
+.settings-page-wrapper .modal-content * {
+  z-index: auto;
+}
+
+.settings-page-wrapper .modal-overlay {
+  z-index: 9999 !important;
+}
+
+.settings-page-wrapper .modal-content {
+  z-index: 10000 !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .settings-page-wrapper .modal-content {
+    max-width: 94vw;
+    max-height: 95vh;
+    border-radius: 14px;
+  }
+  
+  .settings-page-wrapper .modal-content.large {
+    max-width: 96vw;
+  }
+  
+  .settings-page-wrapper .modal-header {
+    padding: 16px 20px;
+  }
+  
+  .settings-page-wrapper .modal-body {
+    padding: 18px 16px;
+  }
+  
+  .settings-page-wrapper .modal-footer {
+    padding: 14px 16px;
+    flex-wrap: wrap;
+  }
+  
+  .settings-page-wrapper .modal-footer button {
+    flex: 1;
+    min-width: 100px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-page-wrapper .modal-content {
+    max-width: 98vw;
+    max-height: 98vh;
+    border-radius: 12px;
+  }
+  
+  .settings-page-wrapper .modal-header {
+    padding: 14px 16px;
+  }
+  
+  .settings-page-wrapper .modal-header .disp {
+    font-size: 16px;
+  }
+  
+  .settings-page-wrapper .modal-body {
+    padding: 14px 12px;
+  }
+  
+  .settings-page-wrapper .modal-footer {
+    padding: 12px 14px;
+    flex-direction: column;
+  }
+  
+  .settings-page-wrapper .modal-footer button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   FIX FOR ANY CONFLICTING STYLES
+   ============================================ */
+
+/* Ensure text-danger class exists */
+.text-danger {
+  color: #dc2626 !important;
+}
+
+/* Override any parent z-index conflicts */
+.stub,
+.tabs-container,
+.setting-tab-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure the modal overlay covers everything */
+body.modal-open {
+  overflow: hidden;
+}

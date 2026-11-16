@@ -1,0 +1,43 @@
+.employee-settings,
+.employee-settings *,
+.employee-settings *::before,
+.employee-settings *::after {
+  box-sizing: border-box;
+}
+
+.employee-settings .settings-card,
+.employee-settings form,
+.employee-settings .form-group,
+.employee-settings .password-input-wrapper {
+  min-width: 0;
+}
+
+.employee-settings .form-group input,
+.employee-settings .settings-btn {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.employee-settings .settings-btn {
+  display: flex;
+}
+
+.employee-settings .password-input-wrapper input {
+  padding-right: 48px;
+}
+
+.employee-settings .password-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  right: 8px;
+}
+
+@media (max-width: 600px) {
+  .employee-settings .settings-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

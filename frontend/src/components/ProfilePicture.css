@@ -1,0 +1,16 @@
+.profile-photo-avatar { overflow: hidden; flex-shrink: 0; }
+.profile-photo-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.profile-picture-editor { display: flex; align-items: center; gap: 26px; padding: 26px; margin-bottom: 24px; border: 1px solid #e1e7ef; border-radius: 16px; background: #fff; box-shadow: 0 4px 22px -10px #1527441c; }
+.profile-picture-preview { position: relative; flex-shrink: 0; }
+.profile-picture-large { display: grid; place-items: center; width: 100px; height: 100px; border-radius: 24px; background: #edf2fa; color: #2e4b73; font-size: 30px; border: 1px solid #dce5f1; }
+.profile-camera-badge { position: absolute; right: -4px; bottom: -4px; background: #2e4b73; color: #fff; border: 3px solid #fff; border-radius: 12px; padding: 7px; display: flex; }
+.profile-picture-copy { min-width: 0; }
+.profile-picture-copy h2 { margin: 0 0 7px; font-size: 16px; font-weight: 600; color: #152744; }
+.profile-picture-copy p { margin: 0 0 14px; font-size: 12px; line-height: 1.6; color: #728097; }
+.profile-picture-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.profile-picture-actions button { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; }
+.profile-picture-copy small { color: #728097; font-size: 10px; }
+.profile-picture-copy .profile-picture-success { color: #1b7a5e; margin-top: 12px; margin-bottom: 0; }
+.profile-picture-copy .profile-picture-error { color: #a12e22; margin-top: 12px; margin-bottom: 0; }
+.profile-picture-file { display: none; }
+@media (max-width: 520px) { .profile-picture-editor { align-items: flex-start; gap: 18px; padding: 20px; flex-direction: column; } .profile-picture-large { width: 80px; height: 80px; border-radius: 20px; } }

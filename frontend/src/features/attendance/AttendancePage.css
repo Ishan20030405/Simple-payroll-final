@@ -1,0 +1,849 @@
+/* src/features/attendance/AttendancePage.css */
+
+/* ======================================
+   PAGE LAYOUT
+   ====================================== */
+.attendance-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ======================================
+   PAGE HEADER
+   ====================================== */
+.att-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.att-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.att-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.att-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.att-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.att-btn-import {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.att-btn-import:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.att-btn-add {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  background: #111c2d;
+  border: none;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.att-btn-add:hover {
+  background: #1e293b;
+  box-shadow: 0 4px 12px rgba(17, 28, 45, 0.25);
+}
+
+/* ======================================
+   STATS CARDS
+   ====================================== */
+.att-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.att-stat-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.att-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.att-stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.att-stat-label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.att-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.att-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.att-icon-blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.att-icon-green {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.att-icon-red {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.att-icon-orange {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+/* ======================================
+   TABLE CARD
+   ====================================== */
+.att-table-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* ======================================
+   FILTERS
+   ====================================== */
+.att-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+/* Date input */
+.att-date-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.att-date-input {
+  padding: 8px 36px 8px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #374151;
+  background: #ffffff;
+  outline: none;
+  width: 145px;
+  transition: border-color 0.18s;
+}
+
+.att-date-input:focus {
+  border-color: #2e4b73;
+}
+
+.att-date-icon {
+  position: absolute;
+  right: 11px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+/* Department select */
+.att-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.att-dept-select {
+  appearance: none;
+  padding: 8px 36px 8px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #374151;
+  background: #ffffff;
+  outline: none;
+  cursor: pointer;
+  min-width: 150px;
+  transition: border-color 0.18s;
+}
+
+.att-dept-select:focus {
+  border-color: #2e4b73;
+}
+
+.att-select-chevron {
+  position: absolute;
+  right: 11px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+/* ======================================
+   TABLE
+   ====================================== */
+.att-table-wrapper {
+  overflow-x: auto;
+}
+
+.att-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.att-table thead tr {
+  background: #f9fafb;
+}
+
+.att-table thead th {
+  text-align: left;
+  padding: 11px 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.att-table tbody td {
+  padding: 14px 20px;
+  font-size: 13.5px;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+.att-table-row:last-child td {
+  border-bottom: none;
+}
+
+.att-table-row:hover td {
+  background-color: #fafafa;
+}
+
+/* Employee cell */
+.att-employee-cell {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.att-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+}
+
+.att-emp-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.att-emp-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.att-emp-id {
+  font-size: 11.5px;
+  color: #9ca3af;
+}
+
+/* Column specific */
+.att-td-dept {
+  color: #374151;
+}
+
+.att-td-time {
+  color: #374151;
+  white-space: nowrap;
+}
+
+.att-td-hrs {
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.att-td-ot {
+  color: #6b7280;
+}
+
+/* ======================================
+   SKELETON / ERROR STATES
+   ====================================== */
+.att-stat-skeleton {
+  display: block;
+  width: 64px;
+  height: 34px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+  animation: att-shimmer 1.4s ease-in-out infinite;
+  margin-top: 4px;
+}
+
+@keyframes att-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.att-stat-error {
+  color: #9ca3af;
+  font-size: 26px;
+  cursor: help;
+}
+
+/* ======================================
+   STATUS BADGES
+   ====================================== */
+.att-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-present {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.status-late {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.status-absent {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.status-leave {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+/* ============================================
+   EDIT/DELETE ACTIONS
+   ============================================ */
+.att-th-actions {
+  text-align: center;
+  min-width: 80px;
+}
+
+.att-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.att-action-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  background: transparent;
+  color: #6b7280;
+}
+
+.att-action-btn:hover {
+  background: #f3f4f6;
+}
+
+.att-action-btn.edit:hover {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.att-action-btn.delete:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ============================================
+   EDIT MODE ROW STYLES
+   ============================================ */
+.editing-row {
+  background-color: #f0f7ff !important;
+}
+
+.editing-row td {
+  padding: 6px 8px !important;
+  vertical-align: middle;
+}
+
+.att-edit-input {
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 13px;
+  width: 100%;
+  min-width: 80px;
+  background: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.att-edit-input:focus {
+  border-color: #2e4b73;
+  box-shadow: 0 0 0 2px rgba(46, 75, 115, 0.1);
+}
+
+.att-edit-input-small {
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 13px;
+  width: 60px;
+  background: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.att-edit-input-small:focus {
+  border-color: #2e4b73;
+  box-shadow: 0 0 0 2px rgba(46, 75, 115, 0.1);
+}
+
+.att-edit-select {
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 13px;
+  background: white;
+  outline: none;
+  cursor: pointer;
+  min-width: 80px;
+}
+
+.att-edit-select:focus {
+  border-color: #2e4b73;
+  box-shadow: 0 0 0 2px rgba(46, 75, 115, 0.1);
+}
+
+.att-edit-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+.att-save-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dcfce7;
+  color: #16a34a;
+  transition: all 0.2s;
+}
+
+.att-save-btn:hover {
+  background: #bbf7d0;
+  color: #15803d;
+}
+
+.att-cancel-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fee2e2;
+  color: #dc2626;
+  transition: all 0.2s;
+}
+
+.att-cancel-btn:hover {
+  background: #fca5a5;
+  color: #b91c1c;
+}
+
+/* ============================================
+   DELETE BUTTON STYLES
+   ============================================ */
+.att-btn-delete {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.att-btn-delete:hover:not(:disabled) {
+  background-color: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.att-btn-delete:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ======================================
+   MODAL
+   ====================================== */
+.att-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.att-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.att-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.att-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.att-modal-close {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.att-modal-close:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.att-modal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.att-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.att-form-label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.att-form-input, .att-form-select {
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.att-form-input:focus, .att-form-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.att-form-input:read-only {
+  background: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.att-modal-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: #f9fafb;
+}
+
+.att-btn-cancel {
+  padding: 8px 16px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+}
+
+.att-btn-cancel:hover {
+  background: #f3f4f6;
+}
+
+.att-btn-save {
+  padding: 8px 16px;
+  background: #111c2d;
+  border: none;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.att-btn-save:hover {
+  background: #1e293b;
+}
+
+/* ============================================
+   SUNDAY OT BADGE
+   ============================================ */
+.sunday-badge {
+  display: inline-block;
+  background: #fef3c7;
+  color: #d97706;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+  cursor: help;
+}
+
+.sunday-badge:hover {
+  background: #fde68a;
+  transform: scale(1.05);
+  transition: all 0.2s;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1100px) {
+  .att-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .att-page-header {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .att-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .att-stat-value {
+    font-size: 26px;
+  }
+
+  .att-table thead th,
+  .att-table tbody td {
+    padding: 10px 14px;
+  }
+
+  .att-edit-input {
+    min-width: 60px;
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+  
+  .att-edit-input-small {
+    width: 50px;
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+  
+  .att-edit-select {
+    min-width: 60px;
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+  
+  .att-actions {
+    gap: 4px;
+  }
+  
+  .att-action-btn {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .att-action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .att-save-btn,
+  .att-cancel-btn {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .att-save-btn svg,
+  .att-cancel-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .att-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .att-header-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .att-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .att-date-input {
+    width: 100%;
+  }
+  
+  .att-dept-select {
+    width: 100%;
+    min-width: unset;
+  }
+  
+  .att-modal {
+    max-width: 95%;
+    margin: 10px;
+  }
+  
+  .att-modal-body {
+    padding: 16px;
+  }
+  
+  .sunday-badge {
+    font-size: 8px;
+    padding: 1px 6px;
+  }
+}
