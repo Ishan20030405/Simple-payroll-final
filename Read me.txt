@@ -1,0 +1,9 @@
+URL : https://payroll-hr-web.vercel.app/login
+--------------------------------------------------
+Default Login
+User name 	: admin
+Password 	: admin
+--------------------------------------------------
+OTP Email
+Email 		: christylkclothing@gmail.com
+Password 	: #200309600586
